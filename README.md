@@ -1,7 +1,7 @@
 ## Introduction
-这个仓库每周会自动生成新的stealth.min.js文件
+这个仓库每周一早晨6点会自动生成新的stealth.min.js文件
 
-This repo will automatically generate the newest stealth.min.js every week.
+This repo will automatically generate the newest stealth.min.js at 6 AM on Monday.
 
 如果你需要在selenium或其他地方用到它，你可以直接在仓库中下载，或点下面的蓝色链接
 
