@@ -21,7 +21,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - run: git clone https://github.com/berstend/puppeteer-extra.git --depth=1
     - run: cd puppeteer-extra/packages/extract-stealth-evasions
     - run: npm install
