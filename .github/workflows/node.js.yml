@@ -24,3 +24,16 @@ jobs:
     - run: git clone https://github.com/berstend/puppeteer-extra.git --depth=1
     - run: cd puppeteer-extra/packages/extract-stealth-evasions && npm install
     - run: cd puppeteer-extra/packages/extract-stealth-evasions && node index.js
+    
+    - name: Add File to My Repo
+      run: |
+        git clone https://github.com/requireCool/stealth.min.js.git origin --depth=1
+        cp puppeteer-extra/packages/extract-stealth-evasions/stealth.min.js origin
+        cd origin
+        git add .
+        git commit -m 'Auto-updated by workflow.'
+        
+    - name: Push Changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
