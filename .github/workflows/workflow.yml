@@ -33,6 +33,7 @@ jobs:
         git config --global user.name github-action
         git clone https://github.com/requireCool/stealth.min.js.git origin --depth=1
         cp puppeteer-extra/packages/extract-stealth-evasions/stealth.min.js /home/runner/work/stealth.min.js/stealth.min.js
+        cd /home/runner/work/stealth.min.js
         git add .
         git commit -m 'Auto-updated by workflow.'
         
