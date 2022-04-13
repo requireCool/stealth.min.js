@@ -1,3 +1,4 @@
+![Actions](https://github.com/requireCool/stealth.min.js/actions/workflows/workflow.yml/badge.svg)
 ## Introduction
 这个仓库每周一早晨6点会自动生成新的stealth.min.js文件
 
