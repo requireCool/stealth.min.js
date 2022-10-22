@@ -28,7 +28,7 @@ jobs:
     
     - name: Build Script
       run: |
-        apt install google-chrome -y
+        sudu apt-get install google-chrome -y
         git clone https://github.com/berstend/puppeteer-extra.git --depth=1
         cd puppeteer-extra/packages/extract-stealth-evasions
         sed -i 's/"puppeteer"/"puppeteer-core"/g'
