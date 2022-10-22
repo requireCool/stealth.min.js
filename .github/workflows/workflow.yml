@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12]
+        node-version: [19]
 
     steps:
     - name: Checkout Codes
