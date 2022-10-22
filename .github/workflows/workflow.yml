@@ -15,20 +15,24 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.18.0]
+        node-version: [12]
 
     steps:
+    - name: Checkout Codes
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    
+    - name: Prepare Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    
+    - name: Build Script
     - run: |
         git clone https://github.com/berstend/puppeteer-extra.git --depth=1
         cd puppeteer-extra/packages/extract-stealth-evasions
         npm install && node index.js
     
-    - name: Add File to My Repo
+    - name: Add File to Repo
       run: |
         git config --global user.email github-action@github.com
         git config --global user.name github-action
