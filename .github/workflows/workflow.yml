@@ -24,16 +24,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: git clone https://github.com/berstend/puppeteer-extra.git --depth=1
-    - run: cd puppeteer-extra/packages/extract-stealth-evasions && npm install
-    - run: cd puppeteer-extra/packages/extract-stealth-evasions && node index.js
+    - run: cd puppeteer-extra/packages/extract-stealth-evasions
+    - run: npm install && node index.js
     
     - name: Add File to My Repo
       run: |
         git config --global user.email github-action@github.com
         git config --global user.name github-action
         git clone https://github.com/requireCool/stealth.min.js.git origin --depth=1
-        cp puppeteer-extra/packages/extract-stealth-evasions/stealth.min.js /home/runner/work/stealth.min.js/stealth.min.js
         cd /home/runner/work/stealth.min.js/stealth.min.js
+        cp /home/runner/work/stealth.min.js/puppeteer-extra/packages/extract-stealth-evasions/stealth.min.js .
         git add .
         git commit -m 'Auto-updated by workflow.'
         
