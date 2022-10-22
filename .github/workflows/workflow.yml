@@ -23,9 +23,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: git clone https://github.com/berstend/puppeteer-extra.git --depth=1
-    - run: cd puppeteer-extra/packages/extract-stealth-evasions
-    - run: npm install && node index.js
+    - run: |
+        git clone https://github.com/berstend/puppeteer-extra.git --depth=1
+        cd puppeteer-extra/packages/extract-stealth-evasions
+        npm install && node index.js
     
     - name: Add File to My Repo
       run: |
