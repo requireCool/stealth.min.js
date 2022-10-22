@@ -28,17 +28,15 @@ jobs:
     
     - name: Build Script
       run: |
-        git clone https://github.com/berstend/puppeteer-extra.git --depth=1
-        cd puppeteer-extra/packages/extract-stealth-evasions
-        npm install && node index.js
+        npx extract-stealth-evasions
     
     - name: Add File to Repo
       run: |
         git config --global user.email github-action@github.com
         git config --global user.name github-action
-        git clone https://github.com/requireCool/stealth.min.js.git origin --depth=1
-        cd /home/runner/work/stealth.min.js/stealth.min.js
-        cp /home/runner/work/stealth.min.js/puppeteer-extra/packages/extract-stealth-evasions/stealth.min.js .
+        git clone https://github.com/requireCool/stealth.min.js.git code --depth=1
+        cp stealth.min.js ./code
+        cd /home/runner/work/stealth.min.js/code
         git add .
         git commit -m 'Auto-updated by workflow.'
         
