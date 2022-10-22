@@ -32,7 +32,7 @@ jobs:
         git clone https://github.com/berstend/puppeteer-extra.git --depth=1
         cd puppeteer-extra/packages/extract-stealth-evasions
         sed -i 's/"puppeteer"/"puppeteer-core"/g' package.json
-        sed -i "s/    headless: true/    headless: true\n    executablePath: \'\/usr\/bin\/google-chrome-stable\'/" index.js
+        sed -i "s/    headless: true/    headless: true,\n    executablePath: \'\/usr\/bin\/google-chrome-stable\'/" index.js
         npm install && node index.js
     
     - name: Add File to Repo
