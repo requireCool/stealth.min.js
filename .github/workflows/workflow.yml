@@ -28,11 +28,11 @@ jobs:
     
     - name: Build Script
       run: |
-        sudo apt-get install google-chrome -y
+        sudo apt-get install google-chrome-stable -y
         git clone https://github.com/berstend/puppeteer-extra.git --depth=1
         cd puppeteer-extra/packages/extract-stealth-evasions
         sed -i 's/"puppeteer"/"puppeteer-core"/g'
-        sed -i 's/    headless: true/    headless: true\n    executablePath: \'/usr/bin/google-chrome\''
+        sed -i 's/    headless: true/    headless: true\n    executablePath: \'/usr/bin/google-chrome-stable\''
         npm install && node index.js
     
     - name: Add File to Repo
