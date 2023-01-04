@@ -36,7 +36,7 @@ jobs:
         with:
           add: 'stealth.min.js'
           force: true
-          ref: 'stealth-js'
+          ref: 'main'
           message: 'Auto-updated stealth.min.js with newest evasions'
         env:
           GITHUB_TOKEN: ${{ secrets.MYGH_TOKEN }}
