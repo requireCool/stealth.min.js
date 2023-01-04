@@ -12,25 +12,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
+      - name: Clone repository
+        run: git clone https://github.com/berstend/puppeteer-extra.git . --depth=1
+        
       - name: 'Fix for: error fsevents@2.1.2: The platform "linux" is incompatible with this module.'
         run: npx json -I -f package.json -e 'this.resolutions={}'
 
-      - name: Clone repository
-        run: |
-          git clone https://github.com/berstend/puppeteer-extra.git puppeteer-extra --depth=1
-      
       - name: Build packages
         run: |
-          cd puppeteer-extra
           yarn install
           yarn bootstrap
           yarn build
           
       - name: Extract stealth.min.js
         run: |
-          cd puppeteer-extra/packages/extract-stealth-evasions
+          cd packages/extract-stealth-evasions
           node index.js
-          cp stealth.min.js ../../../
+          cp stealth.min.js ../../
       
       - name: Commit stealth.min.js
         uses: EndBug/add-and-commit@v4
