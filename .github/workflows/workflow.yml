@@ -18,8 +18,6 @@ jobs:
       - name: Clone repository
         run: |
           git clone https://github.com/berstend/puppeteer-extra.git puppeteer-extra --depth=1
-          cd puppeteer-extra/packages/extract-stealth-evasions && npm install
-          cd puppeteer-extra/packages/extract-stealth-evasions && node index.js
       
       - name: Build packages
         run: |
