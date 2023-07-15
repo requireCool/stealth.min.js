@@ -1,5 +1,5 @@
 ![Node.js CI](https://github.com/requireCool/stealth.min.js/actions/workflows/build.yml/badge.svg)
-![Commit Date](https://img.shields.io/badge/dynamic/json?label=Commit%20Date&query=%24%5B%3A1%5D.commit.committer.date&suffix=%20UTC&url=https%3A%2F%2Fapi.github.com%2Frepos%2FrequireCool%2Fstealth.min.js%2Fcommits?style=plastic&logo=GitHub)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/requireCool/stealth.min.js/main?label=Last%20Commit)
 
 ## Introduction
 这个仓库会在UTC时间每周一早晨6点自动生成新的stealth.min.js文件
