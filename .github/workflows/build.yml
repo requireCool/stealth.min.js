@@ -17,6 +17,7 @@ jobs:
         with:
           owner: 'berstend'
           repository: 'puppeteer-extra'
+          branch: 'master'
           depth: 1
 
       - name: 'Fix for: error fsevents@2.1.2: The platform "linux" is incompatible with this module.'
